@@ -3,9 +3,12 @@ const secaoLivros = document.getElementById('livros');
 function exibirLivros(listaLivros) {
     secaoLivros.innerHTML = '';
     listaLivros.forEach(element => {
-        secaoLivros.innerHTML += `
+      
+      let disponibilidade = element.quantidade > 0 ? 'livro__iamgens' : 'livro__iamgens indisponivel';
+
+      secaoLivros.innerHTML += `
         <div class="livro">
-        <img class="livro__imagens" src="${element.imagem}" alt="${element.alt}" />
+        <img class="${disponibilidade}" src="${element.imagem}" alt="${element.alt}" />
         <h2 class="livro__titulo">
           ${element.titulo}
         </h2>
@@ -16,5 +19,6 @@ function exibirLivros(listaLivros) {
         </div>
       </div>            
         `;
-    });    
+
+    });
 }

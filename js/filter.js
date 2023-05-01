@@ -8,10 +8,6 @@ botoes.forEach(element => {
 
 
 function filtrarLivrosFront(filtro){
-    if (filtro == ''){
-        exibirLivros(livros);
-    }else{
-        const livrosFiltrados = livros.filter(livro => livro.categoria == filtro)
+        const livrosFiltrados = filtro == 'disponivel' ? livros.filter (livro => livro.quantidade > 0 ) : livros.filter(livro => livro.categoria == filtro)
         exibirLivros(livrosFiltrados);
-    }
 }
