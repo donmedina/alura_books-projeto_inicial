@@ -1,7 +1,9 @@
 const secaoLivros = document.getElementById('livros');
+const elementTodosOsLivros = document.getElementById('valor_total_livros_disponiveis');
 
 function exibirLivros(listaLivros) {
     secaoLivros.innerHTML = '';
+    elementTodosOsLivros.innerHTML = '';
     listaLivros.forEach(element => {
       
       let disponibilidade = element.quantidade > 0 ? 'livro__iamgens' : 'livro__iamgens indisponivel';
